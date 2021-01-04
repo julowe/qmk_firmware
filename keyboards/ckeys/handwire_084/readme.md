@@ -14,13 +14,10 @@ The laser cutting file is ideal for Ponoko's P1 board size.
 
 If you want to reflash the pre-installed firmware, use the `.bin` file for Proton C and the `.hex` file for Pro Micro builds. Flash with the QMK Toolbox or via the command line.
 
-Building for Proton C: `make ckeys/handwire_101:default CTPC=yes`
-Building for Pro Micro: `make ckeys/handwire_101:default`
+Building for Proton C: `make ckeys/handwire_084:default CTPC=yes`
+Building for Pro Micro: `make ckeys/handwire_084:default`
 
 Pre-built firmware files (and laser cutting case files) can be found here: https://github.com/c-keys/handwire
-
-### Error compiling with Proton C
-If you get an error on `Linking: .build/ckeys_handwire_101_default_proton_c.elf` and something with `arm-none-eabi` try running `make ckeys/handwire_101:default CTPC=yes EXTRAFLAGS+=--specs=nosys.specs`
 
 ## Default Layout
 
@@ -54,7 +51,7 @@ When you plug in your keyboard, it will function as a numpad. You will remain in
    * |---------+-----+-----+-----|
    * |  MOUSE  |     |     |     |
    * |---------+-----+-----+-----|
-   * |TERMINAL |     |     |     |
+   * |         |     |     |     |
    * |---------+-----+-----+-----|
    * |  ADMIN  |     |     |     |
    * `---------------------------'
@@ -118,24 +115,6 @@ Music mode on every single key. However, you will need to unplug your keyboard i
 ```
 
 Switch to this mode, force yourself through the steep transitionary period, and then you can ditch mice and trackpads forever!
-
-#### Terminal
-
-```
-    /* TERMINAL
-   * ,---------------------------------------.
-   * |            |ABOUT|          |    X    |
-   * |------------+-----+----------+---------|
-   * |TERMINAL OFF|PRINT|          |         |
-   * |------------+-----+----------+---------|
-   * |     X      |FLUSH|          |         |
-   * |------------+-----+----------+---------|
-   * |TERMINAL ON |HELP |          |         |
-   * `--------=======------------------------'
-   */
-```
-
-This layer is not currently working but has been left as an example of how to write macros.
 
 #### Admin
 
