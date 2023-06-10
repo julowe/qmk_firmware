@@ -19,6 +19,9 @@ Building for Pro Micro: `make ckeys/handwire_101:default`
 
 Pre-built firmware files (and laser cutting case files) can be found here: https://github.com/c-keys/handwire
 
+### Error compiling with Proton C
+If you get an error on `Linking: .build/ckeys_handwire_101_default_proton_c.elf` and something with `arm-none-eabi` try running `make ckeys/handwire_101:default CTPC=yes EXTRAFLAGS+=--specs=nosys.specs`
+
 ## Default Layout
 
 You can find the default layout in `qmk-handwire/keymaps/default/keymap.c`

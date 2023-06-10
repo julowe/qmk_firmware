@@ -17,6 +17,7 @@ enum custom_keycodes {
   TERM_HELP,
   CKEYS_ABOUT,
   W3_QUEN,
+  W3_QUENLONG,
   W3_AXII,
   W3_AARD,
   W3_YRDEN,
@@ -31,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |---    --+-----+-----+-----|
    * |  4      |  5  |  6  |  *  |
    * |---    --+-----+-----+-----|
-   * |  Yrden  |  2  |  3  |  -  |
+   * |  Yrden  |  Aard  |  3  |  -  |
    * |---    --+-----+-----+-----|
    * |  Quen   |  Axii  |  Igni  |  +  |
    * `---    ------------------- '
@@ -39,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
     KC_KP_7, KC_KP_8, KC_KP_9, LT(MO(_LAYERS), KC_PSLS), \
     KC_KP_4, KC_KP_5, KC_KP_6, KC_PAST,                  \
-    W3_YRDEN, KC_KP_2, KC_KP_3, KC_PMNS,                  \
+    W3_YRDEN, W3_AARD, KC_KP_3, KC_PMNS,                  \
     W3_QUEN, W3_AXII, W3_IGNI, KC_PPLS \
   ),
     /* LAYERS
@@ -179,27 +180,33 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case W3_QUEN:
       if (record->event.pressed) {
-        SEND_STRING("6" SS_DELAY(333) "q");
+        SEND_STRING(SS_DOWN(X_6) SS_DELAY(50) SS_UP(X_6) SS_DELAY(50) SS_DOWN(X_Q) SS_DELAY(50) SS_UP(X_Q));
+      } else { }
+      break;
+    //learn how to do event on press and another on release of key
+    case W3_QUENLONG:
+      if (record->event.pressed) {
+        SEND_STRING(SS_DOWN(X_6) SS_DELAY(50) SS_UP(X_6) SS_DELAY(50) SS_DOWN(X_Q) SS_DELAY(50) SS_UP(X_Q));
       } else { }
       break;
     case W3_AXII:
       if (record->event.pressed) {
-        SEND_STRING("7" SS_DELAY(333) "q");
+        SEND_STRING(SS_DOWN(X_7) SS_DELAY(50) SS_UP(X_7) SS_DELAY(50) SS_DOWN(X_Q) SS_DELAY(50) SS_UP(X_Q));
       } else { }
       break;
     case W3_AARD:
       if (record->event.pressed) {
-        SEND_STRING("3" SS_DELAY(333) "q");
+        SEND_STRING(SS_DOWN(X_3) SS_DELAY(50) SS_UP(X_3) SS_DELAY(50) SS_DOWN(X_Q) SS_DELAY(50) SS_UP(X_Q));
       } else { }
       break;
     case W3_YRDEN:
       if (record->event.pressed) {
-        SEND_STRING("4" SS_DELAY(333) "q");
+        SEND_STRING(SS_DOWN(X_4) SS_DELAY(50) SS_UP(X_4) SS_DELAY(50) SS_DOWN(X_Q) SS_DELAY(50) SS_UP(X_Q));
       } else { }
       break;
     case W3_IGNI:
       if (record->event.pressed) {
-        SEND_STRING("5" SS_DELAY(333) "q");
+        SEND_STRING(SS_DOWN(X_5) SS_DELAY(50) SS_UP(X_5) SS_DELAY(50) SS_DOWN(X_Q) SS_DELAY(50) SS_UP(X_Q));
       } else { }
       break;
   }
