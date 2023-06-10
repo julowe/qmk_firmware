@@ -16,3 +16,5 @@ TERMINAL_ENABLE = yes
 NKRO_ENABLE = yes           # Enable N-Key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 AUDIO_ENABLE = no           # Audio output
+FAUXCLICKY_ENABLE = no      # Use buzzer to emulate clicky switches
+CTPC=yes
