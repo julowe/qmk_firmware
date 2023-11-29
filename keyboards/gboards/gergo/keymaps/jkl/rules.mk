@@ -1,5 +1,5 @@
 #----------------------------------------------------------------------------
-# make gergo:germ:dfu
+# make gboards/gergo:jkl:flash
 # Make sure you have dfu-programmer installed!
 #----------------------------------------------------------------------------
 # Firmware options
@@ -11,7 +11,9 @@ OLED_ENABLE = yes
 OLED_DRIVER = ssd1306
 LOCAL_GLCDFONT = yes
 
-WPM_ENABLE = yes
+#WPM_ENABLE = yes
+TAP_DANCE_ENABLE = yes
+# TODO: try caps word? https://docs.qmk.fm/#/feature_caps_word
 
 #Debug options
 VERBOSE 		 = yes
