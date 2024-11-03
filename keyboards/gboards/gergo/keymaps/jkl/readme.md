@@ -13,10 +13,15 @@ To edit various settings, enable the 1u trackball and whatnot please modify
 Ideally you should copy this directory and make your changes there.
 If you come up with a good layout submit a PR!
 
-## Updating Keyboard
+## Install QMK
 
 Use qmk's tools - install with:
 `python3 -m pip install --user qmk` and then `qmk setup`
+
+OR under Ubuntu 24+, run `pipx install qmk` and then `qmk setup`.
+NB: you may need to make some udev rules/files readable.
+
+## Updating Keyboard
 
 then `qmk flash -kb gboards/gergo -km jkl` or the under-the-hood command:
 `make gboards/gergo:jkl:flash`
